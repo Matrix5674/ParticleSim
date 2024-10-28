@@ -2,23 +2,25 @@ import processing.core.PApplet;
 import processing.core.PVector;
 
 public class Particle {
-    public float getSize() {
-        return size;
+    public String getSize() {
+        return "SizeX: " + sizeX + " SizeY: " + sizeY;
     }
 
     // TODO: add attributes
     private PVector pos;
     private PVector vel;
     private PVector acc;
-    private float size;
+    private float sizeX;
+    private float sizeY;
 
-    public Particle(float x, float y) {
+    public Particle(float x, float y, float sizeX, float sizeY) {
         pos = new PVector();
         pos.set(x, y);
         vel = new PVector();
         acc = new PVector();
 
-        size = 40;
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
     }
 
 
@@ -64,6 +66,6 @@ public class Particle {
 
     public void draw(PApplet window) {
         window.fill(0);
-        window.ellipse(pos.x, pos.y, size, size);
+        window.ellipse(pos.x, pos.y, sizeX, sizeY);
     }
 }
