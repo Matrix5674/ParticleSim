@@ -8,19 +8,19 @@ public class Main extends PApplet {
     ArrayList<Particle> particles = new ArrayList<>();
     public static final int numberOfParticles = 100;
     RainSystem RS = new RainSystem(500, 600, 600);
+    FireSystem FS = new FireSystem(100, 600, 600);
 
     public void settings() {
         size(600,600);
     }
 
     public void setup() {
-        RS.createSystem();
+        FS.createSystem();
     }
 
     public void draw() {
         background(255);
-        RS.act(this);
-
+        FS.update (this);
     }
 
     public static void main(String[] args) {

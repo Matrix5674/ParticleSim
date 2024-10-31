@@ -15,6 +15,27 @@ public class ParticleSystem {
         this.height = height;
     }
 
+    // update
+    public void update(){
+        for (Particle p : particleList){
+            p.update();
+        }
+    }
+
+    // draw()
+    public void draw(PApplet window){
+        for (Particle p : particleList){
+            p.draw(window);
+        }
+    }
+
+    // addParticles()
+    public void addParticles(int amount){
+        for (int i = 0; i < amount; i++) {
+            particleList.add(new Particle(0, 0, 1, 1));
+        }
+    }
+
     public int getNumOfParticles() {
         return numOfParticles;
     }

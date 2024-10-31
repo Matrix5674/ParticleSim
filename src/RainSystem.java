@@ -12,7 +12,7 @@ public class RainSystem extends ParticleSystem {
 
     public void createSystem(){
         for (int i = 0; i < numOfParticles; i++) {
-            PVector velocity = new PVector(0, (float)(Math.random()*6*5));
+            PVector velocity = new PVector(0, (float)(Math.random()*6+5));
             PVector acceleration = new PVector(0, 1);
             Particle p = new Particle((float)Math.random()*width + 1, 0, 2, 5)
                     .setVel(velocity)
@@ -21,7 +21,7 @@ public class RainSystem extends ParticleSystem {
         }
     }
 
-    public void act(PApplet window){
+    public void update(PApplet window){
         for (Particle p : particleList){
             p.update();
             if(p.getPos().y > height){
