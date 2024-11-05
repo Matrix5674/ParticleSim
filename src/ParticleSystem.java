@@ -7,6 +7,7 @@ public class ParticleSystem {
     protected int numOfParticles;
     protected ArrayList<Particle> particleList;
     protected int width, height;
+    protected float x, y, sizeX, sizeY;
 
     public ParticleSystem(int numOfParticles, int width, int height){
         this.numOfParticles = numOfParticles;
@@ -15,10 +16,20 @@ public class ParticleSystem {
         this.height = height;
     }
 
+    public void createSystem(){
+        for (int i = 0; i < numOfParticles; i++) {
+            addParticles(1);
+        }
+    }
+
     // update
     public void update(){
         for (Particle p : particleList){
             p.update();
+            if (x > width || y > height){
+                x = 0;
+                y = 0;
+            }
         }
     }
 

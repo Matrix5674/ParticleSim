@@ -6,9 +6,11 @@ import java.util.ArrayList;
 public class Main extends PApplet {
     PVector gravity = new PVector(0, 0.4f);
     ArrayList<Particle> particles = new ArrayList<>();
-    public static final int numberOfParticles = 100;
-    RainSystem RS = new RainSystem(500, 600, 600);
-    FireSystem FS = new FireSystem(100, 600, 600);
+    public static final int numberOfRainParticles = 100;
+    public static final int numberOfFireParticles = 400;
+
+    ParticleSystem RS = new RainSystem(numberOfRainParticles, 600, 600);
+    ParticleSystem FS = new FireSystem(numberOfFireParticles, 600, 600);
 
     public void settings() {
         size(600,600);
@@ -20,7 +22,8 @@ public class Main extends PApplet {
 
     public void draw() {
         background(255);
-        FS.update (this);
+        FS.update();
+        FS.draw(this);
     }
 
     public static void main(String[] args) {

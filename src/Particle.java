@@ -7,11 +7,11 @@ public class Particle {
     }
 
     // TODO: add attributes
-    private PVector pos;
-    private PVector vel;
-    private PVector acc;
-    private float sizeX;
-    private float sizeY;
+    protected PVector pos;
+    protected PVector vel;
+    protected PVector acc;
+    protected float sizeX;
+    protected float sizeY;
 
     public Particle(float x, float y, float sizeX, float sizeY) {
         pos = new PVector();
@@ -22,6 +22,7 @@ public class Particle {
         this.sizeX = sizeX;
         this.sizeY = sizeY;
     }
+
 
 
     public PVector getVel() {
